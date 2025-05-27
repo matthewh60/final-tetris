@@ -1,4 +1,5 @@
 class Block {
+<<<<<<< HEAD
   private PVector[] b;
   private String blockType;
   public Block(String type) {
@@ -11,4 +12,14 @@ class Block {
       b[i].rotate(HALF_PI);
     }
   }
+=======
+  private String blockType;
+  private PVector[] b;
+  public Block(String type) {
+    b = new PVector[4];
+  }
+  public void rotate() {
+  }
+  
+>>>>>>> 83a8a40821f4575fb6cf191f51897a248d99d098
 }
