@@ -1,6 +1,7 @@
 class Block {
   private PVector[] b;
   private String blockType;
+  private int descent;
   public Block(String type) {
     if (type.equals("J")) {
       blockType = type;
@@ -30,6 +31,7 @@ class Block {
       blockType = type;
       b = new PVector[]{new PVector(1, 0), new PVector(0, 0), new PVector(0, 1), new PVector(1, 1)};
     }
+    descent = 0;
   }
   public PVector[] getVectors() {
     return b;
@@ -43,5 +45,11 @@ class Block {
         b[i].rotate(HALF_PI);
       }
     }
+  }
+  public int getDescent() {
+    return descent;
+  }
+  public void descend() {
+    descent++;
   }
 }
