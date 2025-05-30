@@ -1,37 +1,31 @@
 class Block {
-  private PVector[] b;
+  private int[][] b;
   private String blockType;
   public Block(String type) {
     if (type.equals("J")) {
-      blockType = type;
-      b = new PVector[]{new PVector(0, 0), new PVector(1, 0), new PVector(-1, 0), new PVector(-1, -1)};
+      b = new int[][] {{1, 0, 0}, {1, 1, 1}, {0, 0, 0}};
     }
     if (type.equals("L")) {
-      blockType = type;
-      b = new PVector[]{new PVector(0, 0), new PVector(1, 0), new PVector(-1, 0), new PVector(1, -1)};
+      b = new int[][] {{0, 0, 1}, {1, 1, 1}, {0, 0, 0}};
     }
     if (type.equals("S")) {
-      blockType = type;
-      b = new PVector[]{new PVector(0, 0), new PVector(-1, 0), new PVector(0, -1), new PVector(1, -1)};
+      b = new int[][] {{0, 1, 1}, {1, 1, 0}, {0, 0, 0}};
     }
     if (type.equals("T")) {
-      blockType = type;
-      b = new PVector[]{new PVector(0, 0), new PVector(-1, 0), new PVector(1, 0), new PVector(0, -1)};
+      b = new int[][] {{0, 1, 0}, {1, 1, 1}, {0, 0, 0}}; 
     }
     if (type.equals("Z")) {
-      blockType = type;
-      b = new PVector[]{new PVector(0, 0), new PVector(1, 0), new PVector(0, -1), new PVector(-1, -1)};
+      b = new int[][] {{1, 1, 0}, {0, 1, 1}, {0, 0, 0}};
     }
     if (type.equals("I")) {
-      blockType = type;
-      b = new PVector[]{new PVector(-2, 0), new PVector(-1, 0), new PVector(0, 0), new PVector(1, 0)};
+      b = new int[][] {{0, 0, 0, 0}, {1, 1, 1, 1}, {0, 0, 0, 0}, {0, 0, 0, 0}};
     }
     if (type.equals("O")) {
-      blockType = type;
-      b = new PVector[]{new PVector(1, 0), new PVector(0, 0), new PVector(0, 1), new PVector(1, 1)};
+      b = new int[][] {{1, 1}, {1, 1}};
     }
+    blockType = type;
   }
-  public PVector[] getVectors() {
+  public int[][] getVectors() {
     return b;
   }
   public String getType() {
