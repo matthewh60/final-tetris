@@ -2,7 +2,8 @@ class Block {
   private PVector[] b;
   private String blockType;
   private int descent;
-  public Block(String type) {
+  private PVector center;
+  public Block(String type, int centerX, int centerY) {
     if (type.equals("J")) {
       blockType = type;
       b = new PVector[]{new PVector(0, 0), new PVector(1, 0), new PVector(-1, 0), new PVector(-1, -1)};
@@ -32,6 +33,7 @@ class Block {
       b = new PVector[]{new PVector(1, 0), new PVector(0, 0), new PVector(0, 1), new PVector(1, 1)};
     }
     descent = 0;
+    center = new PVector(centerX, centerY);
   }
   public PVector[] getVectors() {
     return b;
@@ -39,11 +41,14 @@ class Block {
   public String getType() {
     return blockType;
   }
+  
+  public PVector getCenter() {
+    return center;
+  }
+  
   public void rotateBlock() {
-    if (!blockType.equals("I") && !blockType.equals("O")) {
-      for (int i = 0; i < b.length; i++) {
-        b[i].rotate(HALF_PI);
-      }
+    for (int i = 0; i < b.length; i++) {
+      b[i].set(b[i].y * -1, b[i].x);
     }
   }
   public int getDescent() {
