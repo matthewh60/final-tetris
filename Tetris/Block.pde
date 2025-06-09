@@ -47,17 +47,17 @@ class Block {
   public PVector getCenter() {
     return center;
   }
+  public PVector[] getRotatedVectors() {
+    PVector[] result = new PVector[b.length];
+    for (int i = 0; i < b.length; i++) {
+      result[i] = new PVector(b[i].y * -1, b[i].x);
+    }
+    return result;
+  }
+   
   
-  public void rotateBlock(PVector center) {
-    if (!blockType.equals("I")) {
-      for (int i = 0; i < b.length; i++) {
-        b[i].set(b[i].y * -1, b[i].x);
-      }
-    }
-    state++;
-    if (state >= 5) {
-      state = 1;
-    }
+  public void rotateBlock(Block b) {
+    
   }
   public int getDescent() {
     return descent;
