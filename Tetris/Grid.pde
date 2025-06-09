@@ -23,6 +23,16 @@ class Grid {
       }
     }
   }
+  public boolean isValidPosition(Block b) {
+    for (int i = 0; i < b.getVectors().length; i++) {
+      float x = b.getCenter().x / cellSize + b.getVectors()[i].x;
+      float y = b.getCenter().y / cellSize + b.getVectors()[i].y;
+      if (x < 0 || x >= cols || y < 0 || y >= rows || cells[int(y)][int(x)] != 0) {
+        return false;
+      }
+    }
+    return true;
+  }
 }
   
   
