@@ -4,12 +4,25 @@ class Grid {
   private int rows;
   private color[] colors;
   private int cellSize;
-  public Grid(int cols, int rows, int cellSize) {
+  public Grid(int rows, int cols, int cellSize) {
     this.cols = cols;
     this.rows = rows;
     this.cellSize = cellSize;
     cells = new int[rows][cols];
     colors = new color[] {color(0, 0, 0), #00FFFF, #FFFF00, #800080, #00FF00, #FF0000, #0000FF, #FF7F00};
+    
   }
+  public int getCols() {
+    return cols;
+  }
+  public void drawGrid() {
+    noFill();
+    for (int r = 0; r < cells.length; r++) {
+      for (int c = 0; c < cells[0].length; c++) {
+        square((1000 - cols * cellSize) / 2 + c * cellSize, (1000 - cols * cellSize) / 2 + 20 + r * cellSize, cellSize);
+      }
+    }
+  }
+}
   
   
